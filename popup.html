@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				background-color: #312d2d;
+				color: white;
+				height: auto;
+				width: auto;
+				padding: 5px 15px;
+				margin:0;
+			}
+			.row {
+				width: 160px;
+				display: block;
+			}
+			span {
+				color: white;
+				font-size: 1rem;
+				vertical-align: .13rem;
+			}
+			input[type=number]::-webkit-inner-spin-button, 
+			input[type=number]::-webkit-outer-spin-button { 
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				margin: 0; 
+			}
+			label {
+			  cursor: pointer;
+			  border-radius: 5px;
+			  padding-bottom: 0;
+			}
+			label:hover {
+				background: #5f2b2b;
+				transition: .2s;
+			}
+			input[type="checkbox"]:checked + label:before {
+			  background-color: darkred;
+			}
+			input[type="checkbox"]:checked  {
+				background: darkred;
+			}
+			#mainimage{
+				width: 140px;
+				margin-top: 5px;
+				user-select: none;
+			}
+			h2 {
+				color: white;
+				margin: .7rem 0 .2rem;
+				user-select: none;
+			}
+			.center {
+				display:flex;
+				justify-content:center;
+			}
+			#threshhold {
+				display: inline-block;
+				width: 30px;
+				text-align: center;
+				padding: 0;
+				padding-right: .2rem;
+				
+				background-color: lightgrey;
+				border: 1px #383838ad;
+				border-style:;
+				border-radius: 5px;
+				font-weight: bold;
+				font-size: 1rem;
+				vertical-align: .15rem;
+			}
+			#credits {
+				padding-top: .25rem;
+				text-align center;
+			}
+			#credits span {
+				font-size: .7rem;
+				padding: 0;
+				color: #6f6f6f;
+			}
+			::-moz-selection{
+				background: none;
+			}
+			::selection {
+				background: none;
+			}
+			#threshhold::-moz-selection{
+				background: red;
+				color: white;
+			}
+			#threshhold::selection {
+				background: red;
+				color: white;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<img id="mainimage" src="images\header3.png">
+		</div>
+		<div class="row">
+			<h2> Hide From Pages: </h2>
+		</div>
+		<label class="row">
+			<input type="checkbox" id="bNext" name="bNext">
+			<span>Watch Page</span>
+		</label>
+		<label class="row">
+			<input type="checkbox" id="bHome" name="bHome">
+			<span>Home Page</span>
+		</label>
+		<label class="row">
+			<input type="checkbox" id="bSubs" name="bSubs">
+			<span>Subscriptions</span>
+		</label>
+		<label class="row">
+			<input type="checkbox" id="bChannel" name="bChannel">
+			<span>Channel Videos</span>
+		</label>
+		<label class="row">
+			<input type="checkbox" id="bSearch" name="bSearch">
+			<span>Search Results</span>
+		</label>
+		<div class="row">
+			<h2>Hide Elments:</h2>
+		</div>
+		<label class="row">
+			<input type="checkbox" id="bPlaylist" name="bPlaylist">
+			<span>Playlists</span>
+		</label>
+		<label class="row">
+			<input type="checkbox" id="bAutoPlaylist" name="bAutoPlaylist">
+			<span>Generated Playlists</span>
+		</label>
+		<div class="row">
+			<label>
+				<input type="checkbox" id="bWatched" name="bWatched" value="Watched videos">
+				<span>Watched </span>
+			</label>
+			<span> > </span>
+			<input type='number' id="threshhold" name="threshhold">
+			<span>%</span>
+		</div>
+		<div id="credits" class="row center">
+			<span>By Arun Sundaram</span>
+		</div>
+		<script src="popup.js"></script>
+	</body>
+</html>
