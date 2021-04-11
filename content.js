@@ -136,11 +136,7 @@ function updateWatchScreen(active, recs){
 	let playlists = container.querySelectorAll(Playlist_Renderer_TagName);
 	toggleRenderer(mix, x => active && options.bMix, 'blue');
 	toggleRenderer(playlists, x => active && options.bPlaylist, 'red');
-	
 	let upnext = [...recs, ...mix, ...playlists];
-	//if (!hasUrlForAll(upnext.map(c => c.getElementsByTagName('a')[1]).filter(c => c))) // check if all upnext has valid hrefs
-	//	return;
-
 	renderListToMap(upnext);
 	updateEndScreen(active);
 }
@@ -155,7 +151,6 @@ function updateEndScreen(active) {
 		return;
 	}
 
-	//let endRecs = [...document.getElementsByClassName(EndScreen_ClassName)[0].children];
 	let endRecs = [...endScreen.children];
 	if (!hasUrlForAll(endRecs)) {
 		return;
@@ -164,20 +159,10 @@ function updateEndScreen(active) {
 	for (var i=0; i < endRecs.length; ++i) {
 		let id = getVideoIdFromHref(endRecs[i].href);
 		if (!id || !idMap[id]) {
-			console.log("no id match: ", id, endRecs[i]);
+			if (debugMode) console.log("no id match: ", id, endRecs[i]);
 			continue;
 		}
-		let hide = false;
-		let elem = idMap[id];
-		if (elem.type === RendererType.Normal) {
-			hide = options.bWatched && hasWatched(elem.element);
-		} else if (elem.type === RendererType.Playlist) {
-			hide = options.bPlaylist;
-		} else if (elem.type === RendererType.Mix){
-			hide = options.bMix;
-		} else {
-			console.log("Cannot identify renderer: ", elem);
-		}
+		let hide = shouldHideElement(idMap[id]);
 		endRecs[i].style.opacity = active && hide ? EndScreen_Disabled_Opacity : '';
 		endRecs[i].style.zIndex  = active && hide ? EndScreen_Disabled_ZIndex  : '';
 	}
@@ -275,6 +260,21 @@ function updateMapWithEndscren(endRecs){
 			idMap[id] = {};
 		idMap[id].endElement = c;
 	});
+}
+
+// Returns true if the passed element info contains an element can cat be hidden
+function shouldHideElement(elem) {
+	let hide = false;
+	if (elem.type === RendererType.Normal) {
+		hide = options.bWatched && hasWatched(elem.element);
+	} else if (elem.type === RendererType.Playlist) {
+		hide = options.bPlaylist;
+	} else if (elem.type === RendererType.Mix){
+		hide = options.bMix;
+	} else {
+		console.log("Cannot identify renderer: ", elem);
+	}
+	return hide;
 }
 
 // Toggles the visible / hidden state on items given a condition
