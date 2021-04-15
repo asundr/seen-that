@@ -1,0 +1,4 @@
+*.bak
+*.bak?
+*.psd
+images/!*/
