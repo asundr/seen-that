@@ -1,148 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<style>
-			body {
-				background-color: #312d2d;
-				color: white;
-				height: auto;
-				width: auto;
-				padding: 5px 15px;
-				margin:0;
-			}
-			.row {
-				width: 160px;
-				display: block;
-			}
-			span {
-				color: white;
-				font-size: 1rem;
-				vertical-align: .13rem;
-			}
-			input[type=number]::-webkit-inner-spin-button, 
-			input[type=number]::-webkit-outer-spin-button { 
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				appearance: none;
-				margin: 0; 
-			}
-			label {
-			  cursor: pointer;
-			  border-radius: 5px;
-			  padding-bottom: 0;
-			}
-			label:hover {
-				background: #5f2b2b;
-				transition: .2s;
-			}
-			input[type="checkbox"] {
-				background: white;
-			    -webkit-appearance: none;
-			    -moz-appearance: none;
-			    height: 14px;
-			    width: 14px;
-			    border-radius: 2px;
-			    box-sizing: border-box;
-    			margin: 3px 5px 1px 4px;
-    			cursor: pointer;
-			}
-			input[type="checkbox"]:checked + label:before {
-			  background-color: red;
-			}
-			input[type="checkbox"]:checked  {
-				background: red;
-			}
-			.check {
-				position: relative;
-		        top: 0px;
-		        left: -25px;
-		        height: 0px;
-		        width: 0px;
-			}
-			.check:after {
-				content: "";
-        		position: absolute;
-        		display: none;
-
-				left: 8px;
-		        bottom: 5px;
-		        width: 5px;
-		        height: 12px;
-		        border: solid white;
-		        border-width: 0 3px 3px 0;
-		        border-radius: 2px;
-		        -webkit-transform: rotate(45deg);
-		        -ms-transform: rotate(45deg);
-		        transform: rotate(45deg);
-			}
-      		input[type="checkbox"]:checked + .check:after {
-        		display: block;
-     		}
-			#mainimage{
-				width: 140px;
-				margin-top: 5px;
-				user-select: none;
-			}
-			h2 {
-				color: white;
-				margin: .7rem 0 .2rem;
-				user-select: none;
-			}
-			.center {
-				display:flex;
-				justify-content:center;
-			}
-			#threshhold {
-				display: inline-block;
-				width: 30px;
-				text-align: center;
-				padding: 0;
-				
-				color: white;
-				background-color: #312d2d;
-				border: none;
-				border-bottom: 3px solid red;
-				border-radius: 4px;
-				font-size: 1rem;
-				font-weight: 600;
-				vertical-align: .15rem;
-			}
-			#threshhold:hover, #threshhold:focus {
-				background-color: #ff000070;
-				outline: none;
-			}
-			#credits {
-				padding-top: .25rem;
-				text-align center;
-			}
-			#credits span {
-				font-size: .7rem;
-				padding: 0;
-				color: #6f6f6f;
-			}
-			::-moz-selection{
-				background: none;
-			}
-			::selection {
-				background: none;
-			}
-			#threshhold::-moz-selection{
-				background: red;
-				color: white;
-			}
-			#threshhold::selection {
-				background: red;
-				color: white;
-			}
-			.graterthan {
-				margin: 0 4px;
-				font-weight: 600;
-			}
-			.percentage {
-				margin-left: -4px;
-			}
-			
-		</style>
+		<link rel="stylesheet" href="popup.css">
 	</head>
 	<body>
 		<div class="center">
@@ -199,10 +58,9 @@
 			<input type='number' id="threshhold" title="Minimum percentage watched to hide Videos" name="threshhold">
 			<span class="percentage">%</span>
 		</div>
-<!---		<div id="credits" class="row center">
+		<div id="credits" class="row center">
 			<span>By Arun Sundaram</span>
 		</div>
---->
 		<script src="popup.js"></script>
 	</body>
 </html>
