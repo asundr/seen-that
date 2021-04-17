@@ -97,15 +97,19 @@
 				width: 30px;
 				text-align: center;
 				padding: 0;
-				padding-right: .2rem;
 				
-				background-color: lightgrey;
-				border: 1px #383838ad;
-				border-style:;
-				border-radius: 5px;
-				font-weight: bold;
+				color: white;
+				background-color: #312d2d;
+				border: none;
+				border-bottom: 3px solid red;
+				border-radius: 4px;
 				font-size: 1rem;
+				font-weight: 600;
 				vertical-align: .15rem;
+			}
+			#threshhold:hover, #threshhold:focus {
+				background-color: #ff000070;
+				outline: none;
 			}
 			#credits {
 				padding-top: .25rem;
@@ -129,6 +133,13 @@
 			#threshhold::selection {
 				background: red;
 				color: white;
+			}
+			.graterthan {
+				margin: 0 4px;
+				font-weight: 600;
+			}
+			.percentage {
+				margin-left: -4px;
 			}
 			
 		</style>
@@ -184,9 +195,9 @@
 				<span class="check"></span>
 				<span title="Hides videso you have already Watched">Watched </span>
 			</label>
-			<span> &#8805 </span>
+			<span class="graterthan">&#8805</span>
 			<input type='number' id="threshhold" title="Minimum percentage watched to hide Videos" name="threshhold">
-			<span>%</span>
+			<span class="percentage">%</span>
 		</div>
 <!---		<div id="credits" class="row center">
 			<span>By Arun Sundaram</span>
