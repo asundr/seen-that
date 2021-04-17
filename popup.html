@@ -52,6 +52,32 @@
 			input[type="checkbox"]:checked  {
 				background: red;
 			}
+			.check {
+				position: relative;
+		        top: 0px;
+		        left: -25px;
+		        height: 0px;
+		        width: 0px;
+			}
+			.check:after {
+				content: "";
+        		position: absolute;
+        		display: none;
+
+				left: 8px;
+		        bottom: 5px;
+		        width: 5px;
+		        height: 12px;
+		        border: solid white;
+		        border-width: 0 3px 3px 0;
+		        border-radius: 2px;
+		        -webkit-transform: rotate(45deg);
+		        -ms-transform: rotate(45deg);
+		        transform: rotate(45deg);
+			}
+      		input[type="checkbox"]:checked + .check:after {
+        		display: block;
+     		}
 			#mainimage{
 				width: 140px;
 				margin-top: 5px;
@@ -116,22 +142,27 @@
 		</div>
 		<label class="row">
 			<input type="checkbox" id="bNext" name="bNext">
+			<span class="check"></span>
 			<span title="Hides suggestions from the regular Video Page">Watch Page</span>
 		</label>
 		<label class="row">
 			<input type="checkbox" id="bHome" name="bHome">
+			<span class="check"></span>
 			<span  title="Hides seen videos from the Home Page">Home Page</span>
 		</label>
 		<label class="row">
 			<input type="checkbox" id="bSubs" name="bSubs">
+			<span class="check"></span>
 			<span  title="Hides seen videos from the Subscription Page">Subscriptions</span>
 		</label>
 		<label class="row">
 			<input type="checkbox" id="bChannel" name="bChannel">
+			<span class="check"></span>
 			<span  title="Hides seen videos from a Channel's Video Tab">Channel Videos</span>
 		</label>
 		<label class="row">
 			<input type="checkbox" id="bSearch" name="bSearch">
+			<span class="check"></span>
 			<span  title="Hides seen videso from Search Results">Search Results</span>
 		</label>
 		<div class="row">
@@ -139,15 +170,18 @@
 		</div>
 		<label class="row">
 			<input type="checkbox" id="bPlaylist" name="bPlaylist">
+			<span class="check"></span>
 			<span title="Hides user created Playlists">Playlists</span>
 		</label>
 		<label class="row">
 			<input type="checkbox" id="bAutoPlaylist" name="bAutoPlaylist">
+			<span class="check"></span>
 			<span title="Hides auto-generated Playlists like 'Mix'">Generated Playlists</span>
 		</label>
 		<div class="row">
 			<label>
 				<input type="checkbox" id="bWatched" name="bWatched" value="Watched videos">
+				<span class="check"></span>
 				<span title="Hides videso you have already Watched">Watched </span>
 			</label>
 			<span> &#8805 </span>
