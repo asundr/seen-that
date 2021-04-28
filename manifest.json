@@ -1,7 +1,7 @@
 {
-	"name": "Seen That! For YouTube",
-	"version": "1.0",
-	"description": "Hides YouTube's recommended videos if you have already watched them!",
+	"name": "SeenThat for YouTube",
+	"version": "1.0.1",
+	"description": "Hides YouTube's suggested videos if you have already watched them! Includes options to customize what is hidden.",
 	"permissions":["activeTab", "declarativeContent", "storage"],
 	"background": {
 		"scripts": ["background.js"],
@@ -17,17 +17,17 @@
 	"page_action": {
 		"default_popup": "popup.html",
 		"default_icon": {
-			"16": "images/seen_that16.png",
-			"32": "images/seen_that32.png",
-			"48": "images/seen_that48.png",
-			"128": "images/seen_that128.png"
+			"16": "images/SeenThat_16.png",
+			"32": "images/SeenThat_32.png",
+			"48": "images/SeenThat_48.png",
+			"128":"images/SeenThat_128.png"
 		}
 	},
 	"icons": {
-		"16": "images/seen_that16.png",
-		"32": "images/seen_that32.png",
-		"48": "images/seen_that48.png",
-		"128": "images/seen_that128.png"
+		"32": "images/SeenThat_32.png",
+		"16": "images/SeenThat_16.png",
+		"48": "images/SeenThat_48.png",
+		"128":"images/SeenThat_128.png"
 	},
 	"manifest_version": 2
 }
