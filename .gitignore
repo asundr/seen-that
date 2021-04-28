@@ -2,4 +2,5 @@
 *.bak?
 *.psd
 *.zip
+*.crx
 images/!*/
