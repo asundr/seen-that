@@ -11,6 +11,6 @@ These settings can be toggled for various YouTube pages including the Watch page
 
 ![jnvnN4ORbO](https://user-images.githubusercontent.com/26311830/116238843-3e347600-a7a5-11eb-8b19-1b4f438680cd.png)
 
-Download and intall for Chrome or any chromium browser:
+Download and install for Chrome or any chromium browser:
 
 https://chrome.google.com/webstore/detail/seen-that-for-youtube/nlhibcelmcakfgbdmeinlojopoadhnfe
